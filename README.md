@@ -24,7 +24,7 @@ url = env("DATABASE_URL")
 
 NextAuth
 
-=> new file as "[...nextauth].ts" inside pages/api folder => npm install next-auth bcrypt => npm i axios => npm i @next-auth/prisma-adapter
+=> new file as "[...nextauth].ts" inside pages/api folder => npm install next-auth bcrypt => npm i axios => npm i @next-auth/prisma-adapter => npm install swr
 
 Register user / login function / google and github oauth login
 

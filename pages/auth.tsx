@@ -1,5 +1,4 @@
 import React, { useCallback, useState } from "react";
-import { useRouter } from "next/router";
 import axios from "axios";
 
 import Input from "@/components/Input";
@@ -8,10 +7,8 @@ import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 
 const Auth = () => {
-  const router = useRouter();
-
   const [email, setEmail] = useState("");
-  const [userName, setUserName] = useState("");
+  const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [variant, setVariant] = useState("login");
 
@@ -24,28 +21,26 @@ const Auth = () => {
       await signIn("credentials", {
         email,
         password,
-        redirect: false,
-        callbackUrl: "/",
+        callbackUrl: "/profiles",
       });
-
-      router.push("/");
     } catch (error) {
       console.log(error);
     }
-  }, [email, password, router]);
+  }, [email, password]);
 
   const register = useCallback(async () => {
     try {
       await axios.post("/api/register", {
         email,
-        userName,
+        name,
         password,
       });
+
       login();
     } catch (error) {
       console.log(error);
     }
-  }, [email, userName, password, login]);
+  }, [email, name, password, login]);
 
   return (
     <div className="relativ h-full w-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
@@ -62,9 +57,9 @@ const Auth = () => {
               {variant === "register" && (
                 <Input
                   label="Username"
-                  onChange={(e: any) => setUserName(e.target.value)}
+                  onChange={(e: any) => setName(e.target.value)}
                   id="name"
-                  value={userName}
+                  value={name}
                 />
               )}
 
@@ -92,13 +87,13 @@ const Auth = () => {
 
             <div className="flex flex-row items-center gap-4 mt-8 justify-center">
               <div
-                onClick={() => signIn("google", { callbackUrl: "/" })}
+                onClick={() => signIn("google", { callbackUrl: "/profiles" })}
                 className="w-10 h-10 bg-white rounded-full flex items-center justify-center cursor-pointer hover:opacity-80 transition"
               >
                 <FcGoogle size={28} />
               </div>
               <div
-                onClick={() => signIn("github", { callbackUrl: "/" })}
+                onClick={() => signIn("github", { callbackUrl: "/profiles" })}
                 className="w-10 h-10 bg-white rounded-full flex items-center justify-center cursor-pointer hover:opacity-80 transition"
               >
                 <FaGithub size={28} />
