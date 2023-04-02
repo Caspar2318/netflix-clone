@@ -2,6 +2,8 @@
 
 # Live address at:
 
+NO API usage, hard code data input in mongoDB
+
 npx create-next-app --typescript
 => y => name => yes to ESLint => No => No => Enter
 
@@ -31,3 +33,7 @@ Register user / login function / google and github oauth login
 Github OAuth => profile settings => developer settings => OAuth app => new OAuth app => after create copy paste client ID and secret into .env file
 
 Google OAuth => google cloud console => create new project => APIs and services inside new project => OAuth consent screen => External => name, email => save and continue until summary => Choose sidebar 'Credentials' => create OAuth client ID => web applicaiton => 'Authorized redirect URls': http://localhost:3000/api/auth/callback/google => copy paste client ID and secret into .env file
+
+Features:
+
+date schemas => login => OAuth => Routes & Profile => Navbar => Billboard => movie test data input mangodb => movie list, movie card => add/delete to my favorite movie list => play button => watch video page => info module
