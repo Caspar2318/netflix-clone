@@ -4,13 +4,14 @@ import axios from "axios";
 import useCurrentUser from "@/hooks/useCurrentUser";
 import useFavorite from "@/hooks/useFavorite";
 import { AiOutlinePlus, AiOutlineCheck } from "react-icons/ai";
+import Loader from "./Loader";
 
 interface FavoriteButtonProps {
   movieId: string;
 }
 
 const FavoriteButton = ({ movieId }: FavoriteButtonProps) => {
-  const { mutate: mutateFavorites } = useFavorite();
+  const { mutate: mutateFavorites, isLoading } = useFavorite();
   const { data: currentUser, mutate } = useCurrentUser();
 
   const isFavorite = useMemo(() => {

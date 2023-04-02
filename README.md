@@ -26,7 +26,7 @@ url = env("DATABASE_URL")
 
 NextAuth
 
-=> new file as "[...nextauth].ts" inside pages/api folder => npm install next-auth bcrypt => npm i axios => npm i @next-auth/prisma-adapter => npm install swr
+=> new file as "[...nextauth].ts" inside pages/api folder => npm install next-auth bcrypt => npm i axios => npm i @next-auth/prisma-adapter => npm install swr => npm install zustand
 
 Register user / login function / google and github oauth login
 
@@ -37,3 +37,5 @@ Google OAuth => google cloud console => create new project => APIs and services 
 Features:
 
 date schemas => login => OAuth => Routes & Profile => Navbar => Billboard => movie test data input mangodb => movie list, movie card => add/delete to my favorite movie list => play button => watch video page => info module
+
+deploy on Vercel
