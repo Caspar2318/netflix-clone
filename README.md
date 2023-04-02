@@ -1,6 +1,6 @@
 # NETFLIX ?! Fullstack practice with TS, react, tailwind, nxetJS, NextAuth, MongoDB
 
-# Live address at:
+# Live address at: https://netflix-clone-seven-ochre.vercel.app
 
 NO API usage, hard code data input in mongoDB
 
